@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="book.xsl"?>
+<library>
+    <book>
+        <title>Utopia</title>
+        <author>Sir Thomas Moor</author>
+        <genre>Fiction</genre>
+        <publication_year>2001</publication_year>
+        <publisher>Yale University Press</publisher>
+        <price currency="NPR">3500.00</price>
+        <language>English</language>
+    </book>
+
+    <book>
+        <title>Muna Madan</title>
+        <author>Laxmi Prasad Devkota</author>
+        <genre>Romance</genre>
+        <publication_year>1931</publication_year>
+        <publisher>Sajha Prakashan</publisher>
+        <price currency="NPR">2500.00</price>
+        <language>Nepali</language>
+    </book>
+
+
+    <book>
+        <title>Into The Wild</title>
+        <author>Jon Krakauerl</author>
+        <genre>Adventure</genre>
+        <publication_year>1996</publication_year>
+        <publisher>Villard</publisher>
+        <price currency="NPR">3100.00</price>
+        <language>English</language>
+    </book>
+<?xquery version="1.0"?>
+  	<result>
+		{
+			for $x in doc("books.xml")/books/book
+			where $x/price>3000
+			return $x/title
+		}
+	</result>
+</library>
